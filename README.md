@@ -30,6 +30,16 @@ git clone https://github.com/zhukovaskychina/X-Nodejs.git
  
 make -C out BUILDTYPE=Release -j 8
 
+#### Use
+1,在环境变量当中确保
+export NODEJS_LOG_DIR=/media/zhukovasky/8868D1D569D1C25C/nodejslogdir
+
+
+确保该路径存在；
+
+2,正常启动node项目
+
+
 #### Contribution
 
 1. zhukovasky 
