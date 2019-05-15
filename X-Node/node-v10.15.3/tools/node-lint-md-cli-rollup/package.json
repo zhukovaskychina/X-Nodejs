@@ -3,10 +3,10 @@
   "description": "remark packaged for node markdown linting",
   "version": "1.0.0",
   "devDependencies": {
-    "rollup": "^0.55.5",
-    "rollup-plugin-commonjs": "^8.0.2",
-    "rollup-plugin-json": "^2.3.1",
-    "rollup-plugin-node-resolve": "^3.4.0"
+    "rollup": "^1.12.0",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.0.0"
   },
   "dependencies": {
     "markdown-extensions": "^1.1.0",
@@ -14,7 +14,7 @@
     "remark-lint": "^6.0.3",
     "remark-preset-lint-node": "^1.2.0",
     "unified-args": "^6.0.0",
-    "unified-engine": "^5.1.0"
+    "unified-engine": "^6.0.1"
   },
   "scripts": {
     "build": "rollup -c",
