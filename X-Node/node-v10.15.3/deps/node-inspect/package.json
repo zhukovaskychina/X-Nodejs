@@ -27,9 +27,9 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^3.10.2",
+    "eslint": "^5.16.0",
     "nlm": "^3.0.0",
-    "tap": "^10.7.0"
+    "tap": "^13.1.9"
   },
   "author": {
     "name": "Jan Krems",
