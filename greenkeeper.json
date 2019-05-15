@@ -1,0 +1,14 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "X-Node/node-v10.15.3/deps/acorn/package.json",
+        "X-Node/node-v10.15.3/deps/node-inspect/package.json",
+        "X-Node/node-v10.15.3/deps/npm/package.json",
+        "X-Node/node-v10.15.3/tools/clang-format/package.json",
+        "X-Node/node-v10.15.3/tools/doc/package.json",
+        "X-Node/node-v10.15.3/tools/node-lint-md-cli-rollup/package.json"
+      ]
+    }
+  }
+}
