@@ -51,7 +51,7 @@ export NODEJS_LOG_DIR=/media/zhukovasky/8868D1D569D1C25C/nodejslogdir
  
 2,正常启动node项目
 
-![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/PM2.png)
+![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/pm2.png)
 
 3,打开日志文件夹：
 
