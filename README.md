@@ -3,6 +3,9 @@
 监控你的node.js项目
 
 #### 描述
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/zhukovaskychina/X-Nodejs.svg)](https://greenkeeper.io/)
+
 node.js基于node-10.15.3开发
 为了解决内网无法将监控数据发送给alinode，
 从而让这个版本的node.js具备自动打日志，
