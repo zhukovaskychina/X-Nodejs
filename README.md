@@ -23,7 +23,7 @@ gc-tracer
 2，timeline
 3，report
 4，更改NodeKiller
-5，
+5，最终希望alinode能够开源，解决内网项目无法往外发送数据的问题
 
 
 #### 软件架构
