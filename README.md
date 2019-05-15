@@ -27,7 +27,7 @@ Software architecture description
 git clone https://github.com/zhukovaskychina/X-Nodejs.git
 
 ./configure
-
+ 
 make -C out BUILDTYPE=Release -j 8
 
 #### Contribution
