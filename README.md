@@ -48,7 +48,7 @@ export NODEJS_LOG_DIR=/media/zhukovasky/8868D1D569D1C25C/nodejslogdir
 ![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/env.png)
 
 确保该路径存在；
-
+ 
 2,正常启动node项目
 
 ![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/PM2.png)
