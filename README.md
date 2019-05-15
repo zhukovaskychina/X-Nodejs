@@ -18,6 +18,18 @@ gc-tracer
 本node.js项目参考alinode,
 根据alinode项目特性，反向研究
 
+#### 还需要做啥
+1，cpuProfiler
+
+2，timeline
+
+3，report
+
+4，更改NodeKiller
+
+5，最终希望alinode能够开源，解决内网项目无法往外发送数据的问题
+
+
 #### 软件架构
 1,原版node.js
 Software architecture description
