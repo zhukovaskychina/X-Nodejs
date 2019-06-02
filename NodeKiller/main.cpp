@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
 
 
     try {
-        options_description desc("平安科技版权所有   \n"
+        options_description desc("   \n"
                                  "Usage: NodeKiller [-options]  [args...]\n"
                                  " e.g NodeKiller --help  \n"
                                  "     \n");
