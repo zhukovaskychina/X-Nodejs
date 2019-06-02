@@ -19,16 +19,16 @@ gc-tracer
 根据alinode项目特性，反向研究
 
 #### 还需要做啥
-1，report
 
-2，最终希望alinode能够开源，解决内网项目无法往外发送数据的问题
+1，最终希望alinode能够开源，解决内网项目无法往外发送数据的问题
 
-3，调整IPC通道通用性问题。尝试使用mkfifo函数，从而让内存地址不固定。
+2，调整IPC通道通用性问题。尝试使用mkfifo函数，从而让内存地址不固定。
 
 已知ubuntu上ok。
+需要增加脚本测试。
+3，异常捕捉生成到日志中，现有的日志不正确。
 
-4，异常捕捉生成到日志中，现有的日志不正确。
-
+4，希望alinode开源。
 #### 软件架构
 1,原版node.js
 Software architecture description
@@ -53,12 +53,23 @@ export NODEJS_LOG_DIR=/media/zhukovasky/8868D1D569D1C25C/nodejslogdir
 ![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/PM2.png)
 
 3,打开日志文件夹：
-
+D
 ![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/files.png)
 
 4,查看某个文件：
 
 ![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/http.png)
+
+5,一个实际的例子：
+在线开启--trace_gc --trace_gc_nvp --trace_gc_verbose
+
+![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/pm2-system.png)
+
+执行命令
+NodeKiller --gctrace pid
+![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/NodeKiller.png)
+![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/node-killer.png)
+
 #### Contribution
 
 1. zhukovasky 
