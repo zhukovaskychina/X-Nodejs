@@ -57,7 +57,8 @@ D
 ![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/files.png)
 
 4,查看某个文件：
- 
+      
+      
 ![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/http.png)
 
 5,一个实际的例子：
