@@ -39,7 +39,7 @@ const kParsingContext = Symbol('script parsing context');
 
 const ArrayForEach = Function.call.bind(Array.prototype.forEach);
 const ArrayIsArray = Array.isArray;
-
+const {error}=require("internal/log/http_log");
 class Script extends ContextifyScript {
   constructor(code, options = {}) {
     code = `${code}`;
@@ -85,6 +85,7 @@ class Script extends ContextifyScript {
             produceCachedData,
             parsingContext);
     } catch (e) {
+      error("[ERROR] {}",JSON.stringify(e));
       throw e; /* node-do-not-add-exception-line */
     }
 
@@ -105,6 +106,7 @@ class Script extends ContextifyScript {
           throw new ERR_VM_MODULE_NOT_MODULE();
         const childLinkingStatus = linkingStatusMap.get(m);
         if (childLinkingStatus === 'errored')
+          error("[ERROR] {}",JSON.stringify(m.error));
           throw m.error;
         return m.namespace;
       } });

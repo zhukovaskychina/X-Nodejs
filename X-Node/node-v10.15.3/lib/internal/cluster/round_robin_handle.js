@@ -3,7 +3,7 @@ const assert = require('assert');
 const net = require('net');
 const { sendHelper } = require('internal/cluster/utils');
 const uv = internalBinding('uv');
-const {info,error}=require("internal/log/http_log")
+
 module.exports = RoundRobinHandle;
 
 function RoundRobinHandle(key, address, port, addressType, fd) {
@@ -53,7 +53,7 @@ RoundRobinHandle.prototype.add = function(worker, send) {
   this.server.once('listening', done);
   this.server.once('error', (err) => {
 
-    error("ROUNDROBINERROR",JSON.stringify(err));
+
     // Hack: translate 'EADDRINUSE' error string back to numeric error code.
     // It works but ideally we'd have some backchannel between the net and
     // cluster modules for stuff like this.

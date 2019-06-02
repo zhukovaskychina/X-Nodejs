@@ -36,7 +36,7 @@ const {
   isTypedArray, isSet, isMap, isSetIterator, isMapIterator,
 } = util.types;
 const kCounts = Symbol('counts');
-
+const {error}=require("internal/log/http_log");
 const {
   keys: ObjectKeys,
   values: ObjectValues,

@@ -605,21 +605,45 @@ function resOnFinish(req, res, socket, state, server,beginDate) {
     }
   }
 
+  let endTime=Date.now();
+  let dura=endTime-beginDate;
 
-  let content="url:"+req.url+",method:"+req.method+",ip:"+(req.headers['x-forwarded-for'] || req.connection.remoteAddress ||req.socket.remoteAddress ||req.connection.socket.remoteAddress) +","+
-      JSON.stringify(req.headers)+"," +
-      "statusCode:"+res.statusCode+"," +
-      "responseTime:"+((process.hrtime()[1]-beginDate[1])/1000000);
-
+  let ip=getRealIp(req);
+  let content="url:"+req.url+",method:"+req.method+",ip:"+ip+","+JSON.stringify(req.headers)+"," + "statusCode:"+res.statusCode+"," + "responseTime:"+(dura);
   info("[HTTP] {}",content);
+
 }
 
+
+function getRealIp(request) {
+    let  ip="";
+    if(request.headers["x-forwarded-for"]){
+      ip=request.headers["x-forwarded-for"];
+
+    }else if (request.connection){
+      if(request.connection.remoteAddress){
+        ip=ip+" "+request.connection.remoteAddress;
+      }else if(request.connection.socket){
+        ip=ip+" "+request.connection.socket.remoteAddress;
+      }
+    }else if(request.socket){
+        if(request.socket.remoteAddress){
+            ip=ip+" "+request.socket.remoteAddress;
+        }
+    } else{
+
+      ip="";
+    }
+
+    return ip;
+
+}
 // The following callback is issued after the headers have been read on a
 // new message. In this callback we setup the response object and pass it
 // to the user.
 function parserOnIncoming(server, socket, state, req, keepAlive) {
   resetSocketTimeout(server, socket, state);
-  let beginDate=process.hrtime();
+  let beginDate=Date.now();
   if (server.keepAliveTimeout > 0) {
     req.on('end', resetHeadersTimeoutOnReqEnd);
   }
@@ -635,8 +659,6 @@ function parserOnIncoming(server, socket, state, req, keepAlive) {
   }
 
   state.incoming.push(req);
-
-  info("[QPS] {}","receiveRequest:"+state.incoming.length+",finshResponse:"+state.outgoing.length+",inActiveResponse:"+state.outgoingData);
   // If the writable end isn't consuming, then stop reading
   // so that we don't become overwhelmed by a flood of
   // pipelined requests that may never be resolved.

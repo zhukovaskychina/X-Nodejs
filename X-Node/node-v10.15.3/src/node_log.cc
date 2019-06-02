@@ -82,7 +82,6 @@ namespace node{
             }
         }
 
-
         HttpLogger::HttpLogger() {
             char *logDir = nullptr;
             logDir = getenv("NODEJS_LOG_DIR");

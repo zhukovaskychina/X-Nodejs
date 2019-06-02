@@ -20,7 +20,7 @@
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 'use strict';
-
+const {info,error}=require("internal/log/http_log");
 var spliceOne;
 
 function EventEmitter() {
@@ -167,6 +167,7 @@ EventEmitter.prototype.emit = function emit(type, ...args) {
           value: enhanceStackTrace.bind(null, er, capture),
           configurable: true
         });
+          error("[ERROR] {}",JSON.stringify(capture));
       } catch {}
 
       // Note: The comments on the `throw` lines are intentional, they show
@@ -177,6 +178,7 @@ EventEmitter.prototype.emit = function emit(type, ...args) {
     const errors = lazyErrors();
     const err = new errors.ERR_UNHANDLED_ERROR(er);
     err.context = er;
+    error("[ERROR] {}",JSON.stringify(err));
     throw err; // Unhandled 'error' event
   }
 

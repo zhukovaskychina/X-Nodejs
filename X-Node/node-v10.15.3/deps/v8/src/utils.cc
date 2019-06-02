@@ -67,13 +67,12 @@ namespace v8 {
                 bool flag_given =
                         FLAG_trace_gc_file_name!= nullptr && strlen(FLAG_trace_gc_file_name) != 0;
                 if(flag_given){
-                    std::cout << "flush" << result << std::endl;
+
                     std::string filename = "Node-" + std::to_string(getpid()) + "-"+FLAG_trace_gc_file_name + ".log";
                     std::string filePath = std::string(logDir) + "/" + filename;
-                    ofstream out(filePath, ios::app);
-                    out << trimstr(result) << endl;
-
-                    out.close();
+                    ofstream outfile(filePath, ios::app);
+                    outfile << trimstr(result) << endl;
+                    outfile.close();
                 }
 
             }

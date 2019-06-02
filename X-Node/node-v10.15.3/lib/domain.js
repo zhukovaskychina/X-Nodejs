@@ -34,7 +34,7 @@ const {
   ERR_UNHANDLED_ERROR
 } = require('internal/errors').codes;
 const { createHook } = require('async_hooks');
-const {info,error}=require("internal/log/http_log");
+const {error}=require("internal/log/http_log");
 // overwrite process.domain with a getter/setter that will allow for more
 // effective optimizations
 var _domain = [null];
@@ -214,7 +214,7 @@ Domain.prototype._errorHandler = function(er) {
     // as this would throw an error, make the process exit, and thus
     // prevent the process 'uncaughtException' event from being emitted
     // if a listener is set.
-    error("[ERROR] {}",JSON.stringify(er));
+
     if (EventEmitter.listenerCount(this, 'error') > 0) {
       // Clear the uncaughtExceptionCaptureCallback so that we know that, even
       // if technically the top-level domain is still active, it would
@@ -238,9 +238,9 @@ Domain.prototype._errorHandler = function(er) {
       // If caught is false after this, then there's no need to exit()
       // the domain, because we're going to crash the process anyway.
       caught = this.emit('error', er);
-      error("[ERROR] {}",JSON.stringify(er));
+
     } catch (er2) {
-      error("[ERROR] {}",JSON.stringify(er2));
+        error("[ERROR] {}",JSON.stringify(er2));
       // The domain error handler threw!  oh no!
       // See if another domain can catch THIS error,
       // or else crash on the original one.
@@ -455,7 +455,7 @@ EventEmitter.prototype.emit = function(...args) {
     }
 
     domain.emit('error', er);
-    error("[ERROR] {}",JSON.stringify(er));
+
     return false;
   }
 

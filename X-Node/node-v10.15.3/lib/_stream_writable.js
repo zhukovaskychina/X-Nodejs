@@ -27,7 +27,7 @@
 
 module.exports = Writable;
 Writable.WritableState = WritableState;
-const {info,error}=require("internal/log/http_log")
+
 const util = require('util');
 const internalUtil = require('internal/util');
 const Stream = require('stream');
@@ -242,7 +242,7 @@ Writable.prototype.pipe = function() {
 function writeAfterEnd(stream, cb) {
   var er = new ERR_STREAM_WRITE_AFTER_END();
   // TODO: defer error events consistently everywhere, not just the cb
-    error("STREAMERROR",JSON.stringify(er));
+
   stream.emit('error', er);
   process.nextTick(cb, er);
 }
@@ -259,7 +259,7 @@ function validChunk(stream, state, chunk, cb) {
     er = new ERR_INVALID_ARG_TYPE('chunk', ['string', 'Buffer'], chunk);
   }
   if (er) {
-      error("STREAMERROR",JSON.stringify(er))
+
     stream.emit('error', er);
     process.nextTick(cb, er);
     return false;
@@ -415,7 +415,7 @@ function doWrite(stream, state, writev, len, chunk, encoding, cb) {
 
 function onwriteError(stream, state, sync, er, cb) {
   --state.pendingcb;
-    error("STREAMWRITERROR",JSON.stringify(er));
+
   if (sync) {
     // defer the callback if we are being called synchronously
     // to avoid piling up things on the stack
@@ -615,7 +615,7 @@ function callFinal(stream, state) {
   stream._final((err) => {
     state.pendingcb--;
     if (err) {
-      error("STREAMERROR",JSON.stringify(err));
+
       stream.emit('error', err);
     }
     state.prefinished = true;
@@ -702,8 +702,6 @@ Object.defineProperty(Writable.prototype, 'destroyed', {
 Writable.prototype.destroy = destroyImpl.destroy;
 Writable.prototype._undestroy = destroyImpl.undestroy;
 Writable.prototype._destroy = function(err, cb) {
-  if(err){
-      error("ERROR",JSON.stringify(err));
-  }
+
   cb(err);
 };

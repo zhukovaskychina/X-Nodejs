@@ -159,10 +159,10 @@ uint32_t Isolate::CurrentEmbeddedBlobSize() {
                     std::string filename =
                             "Node-" + std::to_string(getpid()) + "-" + FLAG_trace_gc_file_name + ".log";
                     std::string filePath = std::string(logDir) + "/" + filename;
-                    ofstream out(filePath, ios::app);
-                    out << trim(result) << endl;
+                    ofstream outfile(filePath, ios::app);
+                    outfile << trim(result) << endl;
 
-                    out.close();
+                    outfile.close();
                 }
 
             }

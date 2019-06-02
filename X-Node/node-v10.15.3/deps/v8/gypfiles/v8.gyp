@@ -1480,13 +1480,6 @@
         '<@(torque_generated_pure_headers)',
       ],
       'conditions': [
-                                 ['OS!="win"', {
-                     'cflags': ['-fexceptions','-Wall','-O3'],
-                     'compflags':['-fexceptions'],
-                     'cflags_cc': ['-fexceptions','-Wall','-O3'],
-                     'cflags!': ['-fno-exceptions'],
-                     'cflags_cc!': ['-fno-exceptions'],
-                                 }],
         ['want_separate_host_toolset==1', {
           'toolsets': ['host', 'target'],
         }, {
