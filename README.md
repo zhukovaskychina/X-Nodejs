@@ -44,21 +44,21 @@ make -C out BUILDTYPE=Release -j 8
 #### Use
 1,在环境变量当中确保
 export NODEJS_LOG_DIR=/media/zhukovasky/8868D1D569D1C25C/nodejslogdir
-![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/env.png)
+![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/env.png)
 
 确保该路径存在；
  
 2,正常启动node项目
 
-![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/PM2.png)
+![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/PM2.png)
 
 3,打开日志文件夹：
 
-![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/files.png)
+![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/files.png)
 
 4,查看某个文件：
 
-![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/http.png)
+![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/http.png)
 #### Contribution
 
 1. zhukovasky 
