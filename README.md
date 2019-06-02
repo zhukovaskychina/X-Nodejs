@@ -50,14 +50,14 @@ export NODEJS_LOG_DIR=/media/zhukovasky/8868D1D569D1C25C/nodejslogdir
  
 2,正常启动node项目
 
-![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/PM2.png)
+![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/pm2.png)
 
 3,打开日志文件夹：
 D
 ![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/files.png)
 
 4,查看某个文件：
-
+ 
 ![Image text](https://github.com/zhukovaskychina/X-Nodejs/blob/master/img/http.png)
 
 5,一个实际的例子：
